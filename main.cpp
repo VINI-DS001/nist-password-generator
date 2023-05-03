@@ -3,10 +3,10 @@
 using namespace std;
 
 int main(){
-	char ascTblChars[127];
+	char ascTblChars[96];
 	
-	for (int c=32; c < 127; c++) {
-    ascTblChars[c] = (char) (c);
+	for (int c=0; c < 96; c++) {
+    	ascTblChars[c] = (char) (c + 32);
 	}
 	
 	int string_length = sizeof(ascTblChars)-1;
@@ -22,9 +22,10 @@ int main(){
 	}
     
     srand(time(0));
+	
     cout<<"Generated password:";
     for(int i = 0; i < len; i++)
-    cout << ascTblChars[rand() % string_length];
+    	cout << ascTblChars[rand() % string_length];
 	
 	return 0;
 }
